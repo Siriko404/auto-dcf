@@ -144,7 +144,7 @@ NOT a build step. Comprehensive end-to-end verification of the complete model. T
 - **#13: Historical IS overwritten** -- Check historical columns still blue
 - **#14: Number not text for scenario** -- Check CHOOSE label
 - **#15: Hardcoded peer stats** -- Check AVERAGE/MEDIAN formulas
-- **#16: Built without reading CFI template** -- Architecture check
+- **#16: Built without reading reference template** -- Architecture check
 - **#17: Numbers not traceable** -- Check cell comments
 - **#18: Audit read script not Excel** -- Audit MUST open .xlsx with openpyxl
 - **#19: Deferred tax missing** -- Check tax schedules have deferred section

@@ -1,9 +1,9 @@
 # Step 1: Workbook Skeleton
 
 ## What to Build
-Create the 4-tab workbook with exact CFI template structure: banner rows, navigation, year headers, schedule headers, column widths, freeze panes, images, footers, print areas, and define ALL row constants in `row_map.py`.
+Create the 4-tab workbook with exact reference template structure: banner rows, navigation, year headers, schedule headers, column widths, freeze panes, images, footers, print areas, and define ALL row constants in `row_map.py`.
 
-**Source of truth:** CFI Financial Modeling Guidelines (REQ-G) take precedence for conventions. Excel extraction (`cfi_extract_complete_excel_SCRIPT.md`) provides exact structure/layout. Where they conflict, GUIDELINES WIN — the template is one implementation that may deviate from CFI's own standard.
+**Source of truth:** Financial Modeling Guidelines (REQ-G) take precedence for conventions. Excel extraction (`cfi_extract_complete_excel_SCRIPT.md`) provides exact structure/layout. Where they conflict, GUIDELINES WIN — the template is one implementation that may deviate from the published standard.
 
 ## Python Architecture
 
@@ -54,7 +54,7 @@ DATA_COLS = HIST_COLS + FCST_COLS + [TERM_COL]  # F through N
 
 **The template omits green — we implement the FULL guideline standard.**
 
-Builder agents MUST apply green font to ANY formula that references a different sheet (e.g., `=Inputs!$F$97` on Model sheet gets green font, not black). This is CFI's published convention (REQ-G-110) even though their own template implementation skipped it.
+Builder agents MUST apply green font to ANY formula that references a different sheet (e.g., `=Inputs!$F$97` on Model sheet gets green font, not black). This is the published convention (REQ-G-110) even though their own template implementation skipped it.
 
 ## Capitalization Convention (REQ-G-123 through REQ-G-127 — MANDATORY)
 
@@ -90,7 +90,7 @@ A=9.14, B=17.71, C=11.29, D=15.71, E=1.71, F=11.71, G-N=10.29, O=1.71
 - Height: 50.1 (Outputs, Inputs, Model)
 - Fill: `FF000C3F` (dark navy) on cols B through last data col
 - Cols E+ on non-Cover sheets: bg variant `FF000000`
-- CFI logo image: Outputs/Inputs/Model from=(1,0); size 16200x4708 EMU
+- company logo image: Outputs/Inputs/Model from=(1,0); size 16200x4708 EMU
 - No text content — purely visual banner
 
 **Cover is DIFFERENT:** Cover row 1 has white fill (theme=0) on A1 only. The Cover banner fill (`FF000C3F`) is on rows 2-9 (cols B-N). Cover image is at from=(2,3). Cover does NOT follow the same row 1 pattern.
@@ -247,7 +247,7 @@ DCF_MULT_HEADER = 408
 - Named styles to create: Normal, Comma, Percent, Normal 2 2 2, Hyperlink 2 2, Hyperlink, Comma 2
 
 ## Row Grouping (REQ-G-064 — MANDATORY)
-All detail rows within each schedule on Outputs, Inputs, and Model must have OutlineLevel=1. This enables collapse/expand navigation per CFI guidelines.
+All detail rows within each schedule on Outputs, Inputs, and Model must have OutlineLevel=1. This enables collapse/expand navigation per institutional guidelines.
 
 - Model (includes trailing spacer row per group):
   - 4-45 (Rev), 48-91 (Cost), 94-125 (IS), 128-160 (WC), 163-206 (Depr), 209-235 (Asset), 238-277 (Lev Tax), 280-319 (Unlev Tax), 322-359 (UFCF), 362-406 (DCF Perp), 409-453 (DCF Mult)
@@ -325,10 +325,10 @@ Manual page break: row=46
 - **Not using green font (`FF006100`) for cross-tab links** — Guidelines REQUIRE it (REQ-G-110), template skips it
 - Setting freeze to `E2` instead of `A2` (v3 error)
 - Using `thin` borders where `hair` is correct (most common grid border)
-- Using `double` borders for totals (does NOT exist in CFI template)
+- Using `double` borders for totals (does NOT exist in reference template)
 - 4 historical cols instead of 3 (v3 says F-I historical, actual is F-H)
 - Wrong column widths (v3 uses Cover widths for all sheets — each sheet differs)
 - Missing row 2 navigation formatting (orange `FFFA621C`)
 - Not placing images on all 4 sheets (v3 only mentions Cover)
-- 11 schedules not 12 (no standalone "Debt Schedule" in CFI template)
+- 11 schedules not 12 (no standalone "Debt Schedule" in reference template)
 - Using lower case or Title Case for section sub-headers instead of UPPER CASE (REQ-G-125)

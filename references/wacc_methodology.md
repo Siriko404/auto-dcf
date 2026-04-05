@@ -86,7 +86,7 @@ WACC = We × Re + Wd × Kd(1-T)
 ### Current vs Target Capital Structure
 - **Current**: Use actual market cap and total debt from most recent BS
 - **Target**: Use management guidance, peer median, or analyst consensus
-- CFI models typically use a target structure (blue input cell)
+- institutional models typically use a target structure (blue input cell)
 
 ## Dual Tax Method
 

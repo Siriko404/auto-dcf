@@ -55,4 +55,4 @@ Row {check}:   PP&E Check = Closing - (Existing Close + New Close) [MUST = 0]
 - **#8: Wrong PP&E value** — Historical PP&E must match audited BS exactly
 - Depreciation sign: must be negative in this schedule (reduces NBV)
 - Capex sign: must be positive (adds to NBV)
-- Not building this schedule at all — it is the 12th schedule required by CFI standards
+- Not building this schedule at all — it is the 12th schedule required by institutional standards

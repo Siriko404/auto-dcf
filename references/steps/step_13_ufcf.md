@@ -21,7 +21,7 @@ NOTE: If using Approach A (decomposed NI), EBITDA method MUST use Unlevered CURR
 --- Method 2: Net Income Approach ---
 TWO valid approaches exist. Choose ONE. Do NOT mix components.
 
-**Approach A (Decomposed — recommended, matches CFI reference model):**
+**Approach A (Decomposed — recommended, matches reference model):**
 Row {m2_label}:    "Method 2: Net Income Approach"
 Row {ni}:          Net Income (green -> IS)
 Row {da}:          Add: D&A (green -> Step 9 Total D&A, positive)

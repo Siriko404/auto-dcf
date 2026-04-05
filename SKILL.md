@@ -5,7 +5,7 @@ description: Use when user asks for DCF valuation, company valuation, AutoDCF, o
 
 # AutoDCF v3
 
-AutoDCF builds institutional-quality DCF valuation models compliant with CFI (Corporate Finance Institute) Financial Modeling Guidelines. The MAIN CONVERSATION is a pure orchestrator — it spawns separate builder and auditor agents per step. It NEVER writes build code itself.
+AutoDCF builds institutional-quality DCF valuation models compliant with institutional Financial Modeling Guidelines. The MAIN CONVERSATION is a pure orchestrator — it spawns separate builder and auditor agents per step. It NEVER writes build code itself.
 
 ## Platform Support
 
@@ -96,7 +96,7 @@ Terminal (Orchestrator)
 └── {TICKER}_DCF_Model_checkpoint_step{N}.xlsx  # Rollback checkpoints
 ```
 
-**Excel workbook (4 tabs, CFI standard order):**
+**Excel workbook (4 tabs, institutional standard order):**
 
 | Tab | Purpose |
 |-----|---------|

@@ -1,13 +1,13 @@
-# CFI Formatting Rules (v4 — Extraction-Verified)
+# Formatting Rules (v4 — Extraction-Verified)
 
-**Source of truth:** Deterministic extraction of CFI DCF template (25 fixes, 6 audit rounds).
+**Source of truth:** Deterministic extraction of reference DCF template (25 fixes, 6 audit rounds).
 **All values verified against:** `cfi_extract_complete_excel_SCRIPT.md`
 
 ## Font Colors
 
 | Type | Hex (ARGB) | When to Use |
 |------|-----------|-------------|
-| Hardcoded Input | `FF3271D2` (CFI brand blue) | Raw data from filings, assumptions, opening balances (REQ-G-108) |
+| Hardcoded Input | `FF3271D2` (brand blue) | Raw data from filings, assumptions, opening balances (REQ-G-108) |
 | Formula (same-sheet) | `FF000000` or no explicit color | Formulas referencing cells on the SAME sheet (REQ-G-109) |
 | Cross-sheet link | `FF006100` (dark green) | ANY formula referencing a DIFFERENT sheet (REQ-G-110) |
 | Labels / Row headers | `FF000000` or `theme=1` | Line item names, section labels |
@@ -18,11 +18,11 @@
 | Cover ToC links | `FF002060` | Navigation links |
 | White on dark | `theme=0` or `FFFFFFFF` | Text on dark navy banner backgrounds |
 
-**CRITICAL: Template omits green font, but CFI Guidelines REQUIRE it (REQ-G-110). We implement the full standard: `FF006100` for all cross-tab links.**
+**CRITICAL: Template omits green font, but Financial Modeling Guidelines REQUIRE it (REQ-G-110). We implement the full standard: `FF006100` for all cross-tab links.**
 
 ## Number Formats
 
-### Primary (CFI four-section style)
+### Primary (professional four-section style)
 
 | Data Type | Format String |
 |-----------|--------------|
@@ -80,7 +80,7 @@ Columns differ per sheet. See V4_CONTEXT_BRIEF.md Section 2 for full per-sheet w
 | Freeze panes | Cover | None |
 | Grid lines | All | **OFF** |
 | Font | All | **Open Sans** |
-| Images (CFI logo) | All 4 sheets | Cover: (2,3); Others: (1,0) |
+| Images (company logo) | All 4 sheets | Cover: (2,3); Others: (1,0) |
 | Page footer | Outputs/Inputs/Model | Left: title, Center: page #, Right: logo |
 | Data validation | Inputs!F7 | List: `1,2,3` (scenario selector) |
 | Row grouping | Outputs, Inputs, Model | Outline level 1 |

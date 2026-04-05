@@ -88,7 +88,7 @@ def build_sensitivity_formula(wacc_cell, tgr_cell, fcst_cols, ufcf_row, period_r
 
 ### Scenario Comparison (REQUIRED -- not optional)
 Each dashboard MUST include Best/Base/Worst per-share values using CUMULATIVE compound differentials.
-This was completely skipped in the first live test. It is a CFI requirement (SKILL.md Rule #10).
+This was completely skipped in the first live test. It is a institutional requirement (SKILL.md Rule #10).
 
 Best/Worst scenario comparisons use **cumulative compound differentials**, NOT single-year scaling:
 

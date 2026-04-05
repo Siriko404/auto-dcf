@@ -116,10 +116,10 @@
 
 ## PROCESS (methodology errors)
 
-### #16: Built Without Reading CFI Template
-**Bug**: Started coding without first inspecting the CFI reference template structure.
-**Impact**: Architecture doesn't match CFI standard, requires complete rebuild.
-**Prevention**: Always read the CFI template with openpyxl before writing any code.
+### #16: Built Without Reading Reference Template
+**Bug**: Started coding without first inspecting the reference template structure.
+**Impact**: Architecture doesn't match institutional standard, requires complete rebuild.
+**Prevention**: Always read the reference template with openpyxl before writing any code.
 **Steps affected**: All (architecture)
 
 ### #17: Numbers Not Traceable to Source
