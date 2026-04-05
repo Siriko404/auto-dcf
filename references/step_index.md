@@ -68,6 +68,6 @@ Steps 7-13 create cross-references to schedules not yet built. The auditor shoul
 |-------|-----------|-------------|
 | Data Acquisition (0a-0g) | `autodcf-data-researcher` | Sub-step |
 | Model Build (1-17) | `autodcf-builder` | Step |
-| Checklist Audit | `cfi-dcf-auditor` | Step |
+| Checklist Audit | `dcf-auditor` | Step |
 | Adversarial Audit | `autodcf-adversarial` | Step |
-| Integration (18) | `cfi-dcf-auditor` + `autodcf-adversarial` | Once |
+| Integration (18) | `dcf-auditor` + `autodcf-adversarial` | Once |

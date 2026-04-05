@@ -3,7 +3,7 @@
 ## What to Build
 Create the 4-tab workbook with exact reference template structure: banner rows, navigation, year headers, schedule headers, column widths, freeze panes, images, footers, print areas, and define ALL row constants in `row_map.py`.
 
-**Source of truth:** Financial Modeling Guidelines (REQ-G) take precedence for conventions. Excel extraction (`cfi_extract_complete_excel_SCRIPT.md`) provides exact structure/layout. Where they conflict, GUIDELINES WIN — the template is one implementation that may deviate from the published standard.
+**Source of truth:** Financial Modeling Guidelines (REQ-G) take precedence for conventions. Excel extraction (`extract_complete_excel_SCRIPT.md`) provides exact structure/layout. Where they conflict, GUIDELINES WIN — the template is one implementation that may deviate from the published standard.
 
 ## Python Architecture
 
@@ -159,7 +159,7 @@ Each header has a sub-header row (header_row + 1) and a year header row (header_
 
 ```python
 # === ROW MAP — All row constants for Model sheet ===
-# Verified against cfi_extract_complete_excel_SCRIPT.md
+# Verified against extract_complete_excel_SCRIPT.md
 # Row numbers are ABSOLUTE (not relative offsets)
 
 # --- Global ---

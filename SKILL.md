@@ -28,11 +28,11 @@ Terminal (Orchestrator)
   ├── Phase 2: Model Build (18 steps)
   │   └── For EACH step:
   │       ├── Spawns: autodcf-builder (writes module, runs orchestrator)
-  │       ├── Spawns: cfi-dcf-auditor (checklist audit)
+  │       ├── Spawns: dcf-auditor (checklist audit)
   │       ├── Spawns: autodcf-adversarial (free-form hunt)
-  │       └── If adversarial finds issues: spawns cfi-dcf-auditor (verification)
+  │       └── If adversarial finds issues: spawns dcf-auditor (verification)
   └── Phase 3: Integration Audit
-      └── Spawns: cfi-dcf-auditor + autodcf-adversarial
+      └── Spawns: dcf-auditor + autodcf-adversarial
 ```
 
 ## Output Architecture
@@ -196,7 +196,7 @@ Row map: {absolute path to autodcf/row_map.py}
 
 #### C. SPAWN CHECKLIST AUDITOR
 ```
-Agent(subagent_type="cfi-dcf-auditor", prompt="""
+Agent(subagent_type="dcf-auditor", prompt="""
 AUDIT STEP {N}: {STEP_NAME}
 
 ## Numbered Checklist (address EVERY item)
@@ -244,7 +244,7 @@ ADVERSARIAL AUDIT STEP {N}: {STEP_NAME}
 
 **WAIT. If adversarial finds issues:**
 - If confidence = HIGH: spawn builder to fix, then re-audit
-- If confidence = MEDIUM/LOW: spawn cfi-dcf-auditor as verification auditor to confirm/deny the finding
+- If confidence = MEDIUM/LOW: spawn dcf-auditor as verification auditor to confirm/deny the finding
 - Only verified-real issues go back to builder
 
 #### E. COMMIT AND ADVANCE

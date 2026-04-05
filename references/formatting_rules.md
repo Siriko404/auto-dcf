@@ -1,7 +1,7 @@
 # Formatting Rules (v4 — Extraction-Verified)
 
 **Source of truth:** Deterministic extraction of reference DCF template (25 fixes, 6 audit rounds).
-**All values verified against:** `cfi_extract_complete_excel_SCRIPT.md`
+**All values verified against:** `extract_complete_excel_SCRIPT.md`
 
 ## Font Colors
 
