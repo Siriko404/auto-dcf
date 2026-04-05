@@ -17,6 +17,7 @@ wb = openpyxl.Workbook()
 
 # === STYLE CONSTANTS ===
 FONT_DEFAULT = Font(name='Open Sans', size=10)
+FONT_BANNER = Font(name='Open Sans', size=11)  # row 1 banner cells (sz=11, no bold, no color)
 FONT_BLUE_INPUT = Font(name='Open Sans', size=10, color='FF3271D2')  # hardcoded inputs (REQ-G-108)
 FONT_BLUE_INPUT_BOLD = Font(name='Open Sans', size=10, bold=True, color='FF3271D2')
 FONT_GREEN_XREF = Font(name='Open Sans', size=10, color='FF006100')  # cross-tab links (REQ-G-110)
@@ -263,7 +264,7 @@ Each Inputs section has its own column layout:
 | Section | Historical Cols | Forecast Cols | Terminal |
 |---------|----------------|---------------|---------|
 | Drivers (row 3) | **NONE** — G-K forecast only | G-K (format `0"F"`) | L="Term" |
-| WACC (row 44) | F-H (format `0"A"`) | I-L (format `0"F"`) | — |
+| WACC (row 44) | F-H (format `0"A"`) | I-M (format `0"F"`) | — |
 | Other Inputs (row 88) | F-H (format `0"A"`) | I-M (format `0"F"`) | — |
 
 **Builder must NOT use Model's DATA_COLS (F-N) for Inputs sheet. Each section differs.**
@@ -277,7 +278,7 @@ Each Inputs section has its own column layout:
 - Model I353:N353: formula `I353=1` (NOT locked), priority 1
 
 ## Inputs Sheet Structure
-3 section headers (**similar but NOT identical formatting to Model** — Inputs D3/E3 are bold unlike Model; Inputs sub-header B4 uses `FF0000FF` pure blue, not `FF3271D2` brand blue):
+3 section headers (**similar but NOT identical formatting to Model** — Inputs C3/D3/E3 are bold, Inputs F3 is NOT bold (Model F3 IS bold); Inputs sub-header B4 uses `FF0000FF` pure blue, not `FF3271D2` brand blue):
 
 | Row | Header Text |
 |-----|------------|
