@@ -23,8 +23,10 @@ FONT_GREEN_XREF = Font(name='Open Sans', size=10, color='FF006100')  # cross-tab
 FONT_GREEN_XREF_BOLD = Font(name='Open Sans', size=10, bold=True, color='FF006100')
 FONT_BLACK_FORMULA = Font(name='Open Sans', size=10, color='FF000000')  # same-sheet formulas (REQ-G-109)
 FONT_HEADER = Font(name='Open Sans', size=14, bold=True, color='FF3271D2')  # schedule headers
+FONT_HEADER_PURE_BLUE = Font(name='Open Sans', size=14, bold=True, color='FF0000FF')  # Inputs sub-header B4
 FONT_WHITE = Font(name='Open Sans', size=10, bold=True, color='FFFFFFFF')  # on dark fills
-FONT_ORANGE_NAV = Font(name='Open Sans', size=11, bold=True, italic=True, color='FFFA621C')  # row 2 nav
+FONT_ORANGE_NAV_BOLD = Font(name='Open Sans', size=11, bold=True, color='FFFA621C')  # row 2 B-C (no italic)
+FONT_ORANGE_NAV_BI = Font(name='Open Sans', size=11, bold=True, italic=True, color='FFFA621C')  # row 2 D-N
 FONT_SCENARIO = Font(name='Open Sans', size=9, italic=True)  # row 5-6 info text
 FONT_YEAR = Font(name='Open Sans', size=10, bold=True)  # year headers
 
@@ -74,17 +76,17 @@ Builder agents MUST apply green font to ANY formula that references a different 
 
 ## Per-Sheet Column Widths
 
-**Cover:**
-A=4.71, B=4.86, C=36.71, D-K=10.71 (uniform), L=26.71, M=10.71, N=4.86
+**Cover** (exact extraction values):
+A=4.7109375, B=4.85546875, C=36.7109375, D-K=10.7109375, L=26.7109375, M=10.7109375, N=4.85546875
 
 **Outputs** (dual-panel):
-A=9.14, B=2.71, C=8.0, D-H=11.71, I=6.71, J=2.71, K=8.0, L-P=11.71, Q=3.71
+A=9.140625, B=2.7109375, C=8.0, D-H=11.7109375, I=6.7109375, J=2.7109375, K=8.0, L-P=11.7109375, Q=3.7109375
 
 **Inputs:**
-A=9.14, B=12.86, C-E=11.86, F=12.29, G-L=11.86, M=1.71
+A=9.140625, B=12.85546875, C-E=11.85546875, F=12.28515625, G-L=11.85546875, M=1.7109375
 
 **Model:**
-A=9.14, B=17.71, C=11.29, D=15.71, E=1.71, F=11.71, G-N=10.29, O=1.71
+A=9.140625, B=17.7109375, C=11.28515625, D=15.7109375, E=1.7109375, F=11.7109375, G-N=10.28515625, O=1.7109375
 
 ## Row 1: Banner Row (Outputs, Inputs, Model — NOT Cover row 1)
 - Height: 50.1 (Outputs, Inputs, Model)
@@ -266,11 +268,13 @@ Each Inputs section has its own column layout:
 
 **Builder must NOT use Model's DATA_COLS (F-N) for Inputs sheet. Each section differs.**
 
-## Conditional Formatting (skeleton placeholders)
-- Cover M15:M21: expression `M15=1`, fill bg=`FF947131`
-- Inputs F98:F99, F110: expression `F98=1`
-- Model D246, D288: expression `$D$246=1` / `$D$288=1`
-- Model I43:N43, I353:N353: check expressions
+## Conditional Formatting (exact formulas from extraction)
+- Cover M15:M21: formula `M15=1`, fill bg=`FF947131`, priority 1
+- Inputs F98:F99 F110: formula `F98=1`, priority 1
+- Model D246: formula `$D$246=1`, priority 3
+- Model D288: formula `$D$288=1`, priority 2
+- Model I43:N43: formula `I$43=1` (row-locked $), priority 4
+- Model I353:N353: formula `I353=1` (NOT locked), priority 1
 
 ## Inputs Sheet Structure
 3 section headers (**similar but NOT identical formatting to Model** — Inputs D3/E3 are bold unlike Model; Inputs sub-header B4 uses `FF0000FF` pure blue, not `FF3271D2` brand blue):
@@ -302,7 +306,7 @@ Manual page break: row=46
 6. **Year borders:** F5-H5 bottom=medium brand blue; I5-N5 top=thin + bottom=medium brand blue
 7. **11 schedule headers:** Verify B{row}.value matches exact text for all 11 rows
 8. **Schedule header formatting:** 14pt bold `FF3271D2` font, `FFE7F2FF` fill on each header row
-9. **Banner row:** Row 1 fill = `FF000C3F` on all sheets
+9. **Banner row:** Row 1 fill = `FF000C3F` on Outputs/Inputs/Model (NOT Cover — Cover banner is rows 2-9)
 10. **Images:** 4 images total (one per sheet), size 16200x4708
 11. **Footers:** Outputs/Inputs/Model have left/center/right footer text
 12. **Print areas:** All print area strings match extraction exactly
@@ -316,7 +320,7 @@ Manual page break: row=46
 20. **Margins:** Cover margins=0.315, others=0.118
 21. **Zoom:** Layout view zoom matches per-sheet values (Cover=85, Outputs=95, Inputs=100, Model=140)
 22. **Named styles:** Comma 2 and other named styles exist in workbook
-23. **Inputs columns:** Year headers at D-L (NOT F-N)
+23. **Inputs columns:** Drivers=G-L, WACC=F-L, Other Inputs=F-M (NOT Model's F-N)
 24. **Green font:** I5 (cross-tab ref `=Inputs!$F$97`) has green font `FF006100`
 25. **Cover banner:** Fill on rows 2-9 (NOT row 1)
 
